@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ownedBillsItem"
+        android:title="@string/ownedBill.label" >
+    </item>
+
+    <item
+        android:id="@+id/billsItem"
+        android:title="@string/allBills.label" >
+    </item>
+
+    <item
+        android:id="@+id/signOutItem"
+        android:title="@string/signOut.label" >
+    </item>
+
+</menu>

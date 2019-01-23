@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/topToAccount"
+        android:enabled="true"
+        android:icon="@drawable/ic_stamp"
+        android:title="@string/toAccount.label"
+        app:showAsAction="always|withText" >
+    </item>
+
+    <item
+        android:id="@+id/topToPay"
+        android:enabled="true"
+        android:icon="@drawable/ic_new_releases"
+        android:title="@string/toPay.label"
+        app:showAsAction="always|withText" >
+    </item>
+
+    <item
+        android:id="@+id/topDues"
+        android:enabled="true"
+        android:icon="@drawable/ic_money_receive"
+        android:title="@string/due.label"
+        app:showAsAction="always|withText" >
+    </item>
+
+</menu>

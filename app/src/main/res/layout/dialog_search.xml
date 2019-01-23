@@ -1,0 +1,62 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@+id/acceptSearch"
+        android:layout_marginBottom="15dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:text="@string/search.label"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="22sp"/>
+
+
+        <EditText
+            android:id="@+id/filter"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:inputType="text"
+            android:textSize="15sp"
+            android:hint="@string/search.label"
+            android:drawableStart="@drawable/ic_loop"
+            android:drawablePadding="5dp"/>
+
+
+        <ListView
+            android:id="@+id/dialogListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants"
+            android:divider="@null"
+            android:dividerHeight="0dip" />
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/acceptSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/green"
+        android:src="@drawable/ic_done"
+        android:layout_marginBottom="30dp"
+        app:fabSize="normal"
+        app:pressedTranslationZ="6dp"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        android:focusable="true" />
+</RelativeLayout>

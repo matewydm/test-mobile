@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/login_gradient_background">
+
+
+
+    <RelativeLayout
+        android:id="@+id/friendSearchListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp">
+
+        <RelativeLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/backToLogin"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_backarrow" />
+
+            <TextView
+                android:id="@+id/registerHeader"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_height="70dp"
+                android:textSize="25sp"
+                android:layout_toEndOf="@id/backToLogin"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:textStyle="italic|bold"
+                android:ems="10"
+                android:hint="@string/register.label" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/emailLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/headerLayout"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/emailLabel"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginStart="15dp"
+                android:ems="10"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="@string/email.label"/>
+
+            <EditText
+                android:id="@+id/emailField"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="25dp"
+                android:layout_height="50dp"
+                android:textColor="@color/white"
+                android:inputType="textEmailAddress"
+                android:ems="10"/>
+            <requestFocus/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/phoneNumberLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emailLayout"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/phoneNUmberLabel"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginStart="15dp"
+                android:ems="10"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="@string/phone.label"/>
+
+            <EditText
+                android:id="@+id/phoneNumberField"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/white"
+                android:layout_marginEnd="25dp"
+                android:layout_height="50dp"
+                android:inputType="phone"
+                android:ems="10"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/passwordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phoneNumberLayout"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/passwordLabel"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginStart="15dp"
+                android:ems="10"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="@string/password.field"/>
+
+            <EditText
+                android:id="@+id/passwordField"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="25dp"
+                android:layout_height="50dp"
+                android:textColor="@color/white"
+                android:inputType="textPassword"
+                android:ems="10"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/firstnameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/passwordLayout"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/firstnameLabel"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginStart="15dp"
+                android:ems="10"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="@string/firstname.label"/>
+            <EditText
+                android:id="@+id/firstnameField"
+                android:layout_width="150dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="25dp"
+                android:layout_height="50dp"
+                android:ems="10"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lastnameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/firstnameLayout"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/lastnameLabel"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginStart="15dp"
+                android:ems="10"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="@string/lastname.label"/>
+            <EditText
+                android:id="@+id/lastnameField"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="25dp"
+                android:textColor="@color/white"
+                android:layout_height="50dp"
+                android:ems="10"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/birthDateLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lastnameLayout"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/birthDateLabel"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginStart="15dp"
+                android:ems="10"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="@string/birth.date.label"/>
+            <Button
+                android:id="@+id/birthDatePickerButton"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="25dp"
+                android:layout_height="50dp"
+                android:calendarTextColor="@color/colorPrimaryDark"
+                android:headerBackground="@drawable/transparent_background"
+                android:text="@string/birth.date.picker"
+                android:textSize="12dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@id/birthDateLayout"
+            android:layout_marginTop="25dp">
+
+            <Button
+                android:id="@+id/registerBtn"
+                android:layout_width="175dp"
+                android:layout_height="55dp"
+                android:gravity="center"
+                android:ems="10"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:hint="@string/register.button"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

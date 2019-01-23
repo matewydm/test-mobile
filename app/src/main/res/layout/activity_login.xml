@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingRight="16dp"
+    android:paddingLeft="16dp"
+    android:background="@drawable/login_gradient_background"
+    tools:context="pl.darenie.dna.ui.login.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:ems="10"
+            android:src="@drawable/icon_black" />
+
+        <EditText
+            android:drawableStart="@drawable/ic_person_black_24dp"
+            android:id="@+id/loginField"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:ems="10"
+            android:hint="@string/login.field"
+            android:inputType="textPersonName" />
+        <requestFocus />
+
+        <EditText
+            android:drawableStart="@drawable/lock"
+            android:id="@+id/passwordField"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="@string/password.field"
+            android:inputType="textPassword" />
+
+        <CheckBox
+            android:id="@+id/rememberCheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:hint="@string/remember.checkbox" />
+
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/colorAccentHint"
+            android:text="@string/login.button" />
+        <Button
+            android:id="@+id/registerBtn"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/register.button" />
+
+        <TextView
+            android:id="@+id/orLbl"
+            android:layout_width="250dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:text="@string/or.label"
+            android:textAlignment="center" />
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/fbLoginButton"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:ems="10" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

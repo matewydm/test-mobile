@@ -1,0 +1,477 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/gradient_background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relLayout1"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:id="@+id/friendSearchListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <EditText
+                android:id="@+id/billName"
+                android:layout_width="250dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="70dp"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:ems="10"
+                android:hint="@string/bill.name.hint"
+                android:textColor="@color/white"
+                android:inputType="textPersonName" />
+            <requestFocus />
+
+            <RelativeLayout
+                android:id="@+id/paymentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/billName"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/moneyLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_marginStart="15dp"
+                    android:ems="10"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:hint="@string/payment.label"/>
+                <requestFocus />
+                <EditText
+                    android:id="@+id/paymentField"
+                    android:layout_width="150dp"
+                    android:gravity="center"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="25dp"
+                    android:layout_height="50dp"
+                    android:textColor="@color/white"
+                    android:ems="10"
+                    android:inputType="numberDecimal"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/priorityLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/paymentLayout"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/priorityLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_marginStart="15dp"
+                    android:ems="10"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:hint="@string/priority.label"/>
+                <Spinner
+                    android:id="@+id/prioritySpinner"
+                    android:layout_width="150dp"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="25dp"
+                    android:layout_height="50dp"
+                    android:ems="10"/>
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/cyclicBillDetailsFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/priorityLayout">
+            </FrameLayout>
+
+            <RelativeLayout
+                android:id="@+id/chargersLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cyclicBillDetailsFragment"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/chargersLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_marginStart="15dp"
+                    android:ems="10"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:hint="@string/chargers.bill.label"/>
+
+                <ImageView
+                    android:id="@+id/chargersAddIcon"
+                    android:layout_width="150dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="25dp"
+                    android:layout_height="40dp"
+                    android:ems="10"
+                    android:tint="@color/colorAccent"
+                    android:src="@drawable/ic_add_circle"/>
+
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/chargersListView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="125dp"
+                android:layout_below="@id/chargersLayout"
+                android:visibility="gone">
+            </ListView>
+
+            <RelativeLayout
+                android:id="@+id/payersLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/chargersListView"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/payersLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_marginStart="15dp"
+                    android:ems="10"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:hint="@string/payers.bill.label"/>
+                <ImageView
+                    android:id="@+id/payersAddIcon"
+                    android:layout_width="150dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="25dp"
+                    android:layout_height="40dp"
+                    android:ems="10"
+                    android:tint="@color/colorAccent"
+                    android:src="@drawable/ic_add_circle"/>
+
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/payersListView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="125dp"
+                android:layout_below="@id/payersLayout"
+                android:visibility="gone">
+            </ListView>
+
+            <RelativeLayout
+                android:id="@+id/cycleBillLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/payersListView"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/cycleBillLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_marginStart="15dp"
+                    android:ems="10"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:hint="@string/cycle.bill"/>
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="25dp"
+                        android:layout_height="40dp"
+                        android:gravity="center">
+                        <CheckBox
+                            android:id="@+id/cyclicBillCheckbox"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:ems="10"/>
+                    </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cyclicLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@id/cycleBillLayout">
+
+
+                <RelativeLayout
+                    android:id="@+id/cycleTypeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/cycleTypeLabel"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:ems="10"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:hint="@string/cyclicType.label"/>
+
+                    <Spinner
+                        android:id="@+id/cycleTypeSpinner"
+                        android:layout_width="150dp"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="25dp"
+                        android:layout_height="50dp"
+                        android:ems="10"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/weekLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cycleTypeLayout"
+                    android:layout_marginTop="10dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/weekDayLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+                        <TextView
+                            android:id="@+id/weekDayLabel"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:ems="10"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:hint="@string/dayOfWeek.label"/>
+
+                        <Spinner
+                            android:id="@+id/weekDaySpinner"
+                            android:layout_width="150dp"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="25dp"
+                            android:layout_height="50dp"
+                            android:ems="10"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/weekHourLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/weekDayLayout"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/weekHourLabel"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:ems="10"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:hint="@string/hour.label"/>
+                        <Button
+                            android:id="@+id/weekHourButton"
+                            android:layout_width="150dp"
+                            android:gravity="center"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="25dp"
+                            android:layout_height="50dp"
+                            android:text="@string/select.hour.label"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold"
+                            android:max="10"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/dayHourWeekLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/weekHourLayout"
+                        android:layout_marginTop="10dp">
+                        <TextView
+                            android:id="@+id/dayWeekLabel"
+                            android:layout_toStartOf="@+id/separationWeek"
+                            android:layout_width="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:text="MONDAY"/>
+                        <TextView
+                            android:id="@+id/separationWeek"
+                            android:layout_width="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:text="@string/week.separation.label"/>
+                        <TextView
+                            android:id="@+id/hourWeekLabel"
+                            android:layout_toEndOf="@+id/separationWeek"
+                            android:layout_width="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:text="HH:MM"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/monthLayout"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cycleTypeLayout"
+                    android:layout_marginTop="10dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/monthDayLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+                        <TextView
+                            android:id="@+id/monthDayLabel"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:ems="10"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:hint="@string/dayOfWeek.label"/>
+
+                        <SeekBar
+                            android:id="@+id/monthDaySeeker"
+                            android:layout_width="150dp"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="25dp"
+                            android:layout_height="50dp"
+                            android:ems="10"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/monthHourLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/monthDayLayout"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/monthHourLabel"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:ems="10"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:hint="@string/hour.label"/>
+                        <Button
+                            android:id="@+id/monthHourButton"
+                            android:layout_width="150dp"
+                            android:gravity="center"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="25dp"
+                            android:layout_height="50dp"
+                            android:text="@string/select.hour.label"
+                            android:textSize="20sp"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:max="10"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/dayHourMonthLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/monthHourLayout"
+                        android:layout_marginTop="10dp">
+                        <TextView
+                            android:id="@+id/dayMonthLabel"
+                            android:layout_width="wrap_content"
+                            android:gravity="center"
+                            android:layout_toStartOf="@+id/separationMonth"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:text="1"/>
+                        <TextView
+                            android:id="@+id/separationMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:text="@string/month.separation.label"/>
+                        <TextView
+                            android:id="@+id/hourMonthLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_toEndOf="@+id/separationMonth"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:text="HH:MM"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/buttonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@id/cyclicLayout"
+                android:textAlignment="center"
+                android:layout_marginTop="25dp">
+
+                <Button
+                    android:id="@+id/addBillButton"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:ems="10"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:hint="@string/addNewBill.label"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
